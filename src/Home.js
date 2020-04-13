@@ -1,16 +1,27 @@
-import React from 'react';
-import { Form, Button } from 'react-bootstrap';
+import React, { Component } from 'react'
+import { withRouter } from "react-router"
+import { Form, Button } from 'react-bootstrap'
 
-export const Home = (props) => (
-  <div>
-    <Form onSubmit={props.getZip}>
-      <Form.Group controlId="zipCode">
-        <Form.Control min="00000" max="99999" type="number" placeholder="Enter Zip Code" />
-      </Form.Group>
+class Home extends Component {
+  componentDidUpdate() {
+    this.props.history.push(`/weather/${this.props.zip}`)
+  }
 
-      <Button variant="primary" type="submit">
-        Search
-      </Button>
-    </Form>
-  </div>
-)
+  render () {
+    return (
+      <div>
+        <Form onSubmit={this.props.getZip}>
+          <Form.Group controlId="zipCode">
+            <Form.Control min="00000" max="99999" type="number" placeholder="Enter Zip Code" />
+          </Form.Group>
+
+          <Button variant="primary" type="submit">
+            Search
+          </Button>
+        </Form>
+      </div>
+    )
+  }
+}
+
+export default withRouter(Home)
