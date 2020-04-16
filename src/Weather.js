@@ -8,7 +8,7 @@ class Weather extends Component {
   render () {
     return (
       <div>
-        {this.props.city}
+        Results
       </div>
     )
   }
