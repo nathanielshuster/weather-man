@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 class Weather extends Component {
-  componentDidMount() {
+  componentDidUpdate() {
     console.log(this.props)
   }
 
