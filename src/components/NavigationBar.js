@@ -10,6 +10,10 @@ const Styles = styled.div`
   .navbar-brand, .navbar-nav .nav-link {
     color: white;
 
+    font-family: ff-tisa-web-pro, serif;
+    font-weight: 400;
+    font-style: normal;
+
     &:hover {
       color: #4C768E;
     }
