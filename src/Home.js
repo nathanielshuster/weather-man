@@ -1,27 +1,52 @@
 import React from 'react'
-import { Form, Button, InputGroup, Carousel, Image, Container, Row, Col } from 'react-bootstrap'
+import { Form, Button, InputGroup, Container, Row, Col } from 'react-bootstrap'
 import styled from 'styled-components';
-import mainIcon from './assets/home-icon.png'
 
 const Styles = styled.div`
   .top {
-    padding: 30px 0px 0px;
-  }
-
-  h1 {
+    padding: 130px 0px 0px;
     font-family: lust,serif;
     font-weight: 400;
     font-style: normal;
-    color: #4C768E;
+    color: #659DBD;
   }
 
-  .input-group {
-    padding: 30px 0px 28px;
-    width: 35%;
-
+  .slogan {
     font-family: ff-tisa-web-pro, serif;
     font-weight: 400;
     font-style: normal;
+    color: #659DBD;
+  }
+
+  .input-group {
+    padding: 30px 0px 0px;
+    width: 35%;
+    font-family: ff-tisa-web-pro, serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .form-control {
+    border-color: #659DBD;
+  }
+
+  .btn {
+    background-color: #659DBD;
+    border-color: #659DBD;
+
+    &:hover {
+      background-color: #4C768E;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .top {
+      font-size: 3.5rem;
+    }
+
+    .slogan {
+      font-size: 2rem;
+    }
   }
 `;
 
@@ -30,14 +55,14 @@ export const Home = (props) => (
     <Container>
       <Row>
         <Col>
-          <h1 className="display-2 text-center top">Your Weather.</h1>
-          <h1 className="display-2 text-center">Right Now.</h1>
+          <h1 className="display-3 text-center top">Weatherman</h1>
+          <h1 className="text-center slogan">Your Weather. Right Now.</h1>
 
           <Form className="d-flex justify-content-center" onSubmit={props.getWeather}>
             <InputGroup>
               <Form.Control id="zipCode" min="00000" max="99999" type="number" placeholder="Zip Code" />
               <InputGroup.Append>
-                <Button type="submit" variant="outline-secondary">Go</Button>
+                <Button type="submit">Go</Button>
               </InputGroup.Append>
             </InputGroup>
           </Form>
@@ -46,45 +71,3 @@ export const Home = (props) => (
     </Container>
   </Styles>
 )
-
-export default Home
-
-// <Carousel>
-//   <Carousel.Item>
-//     <img
-//       className="d-block w-100"
-//       src={cloudyBottom}
-//       alt="Cloudy Sky"
-//     />
-//     <Carousel.Caption>
-//       <h3>First slide label</h3>
-//       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-//     </Carousel.Caption>
-//   </Carousel.Item>
-//
-//   <Carousel.Item>
-//     <img
-//       className="d-block w-100"
-//       src={cloudyBottom}
-//       alt="Second slide"
-//     />
-//
-//     <Carousel.Caption>
-//       <h3>Second slide label</h3>
-//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-//     </Carousel.Caption>
-//   </Carousel.Item>
-//
-//   <Carousel.Item>
-//     <img
-//       className="d-block w-100"
-//       src={cloudyBottom}
-//       alt="Third slide"
-//     />
-//
-//     <Carousel.Caption>
-//       <h3>Third slide label</h3>
-//       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-//     </Carousel.Caption>
-//   </Carousel.Item>
-// </Carousel>

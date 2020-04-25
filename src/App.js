@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { withRouter } from "react-router"
-import Home from './Home'
+import { Home } from './Home'
 import { About } from './About'
 import Weather from './Weather'
 import { NoMatch } from './NoMatch'
 import { Layout } from './components/Layout'
 import { NavigationBar } from './components/NavigationBar'
+import { Footer } from './components/Footer'
+import { Container, Row, Col } from 'react-bootstrap'
 
 const API_KEY = "bc56cc6b51e6d5970645d40b8f469a84"
 
@@ -49,29 +51,30 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavigationBar />
-        <Layout>
-          <Switch>
-            <Route exact path="/" render={() =>
-              <Home
-                getWeather={this.getWeather}
-              />}
-            />
-            <Route exact path="/weather/:zipCode" render={() =>
-              <Weather
-                zipCode={this.state.zipCode}
-                city={this.state.city}
-                description={this.state.description}
-                temperature={this.state.temperature}
-                feelsLike={this.state.feelsLike}
-                high={this.state.high}
-                low={this.state.low}
-                windSpeed={this.state.windSpeed}
-              />}
-            />
-            <Route exact path="/about" component={About} />
-            <Route component={NoMatch} />
-          </Switch>
-        </Layout>
+          <Layout>
+            <Switch>
+              <Route exact path="/" render={() =>
+                <Home
+                  getWeather={this.getWeather}
+                />}
+              />
+              <Route exact path="/weather/:zipCode" render={() =>
+                <Weather
+                  zipCode={this.state.zipCode}
+                  city={this.state.city}
+                  description={this.state.description}
+                  temperature={this.state.temperature}
+                  feelsLike={this.state.feelsLike}
+                  high={this.state.high}
+                  low={this.state.low}
+                  windSpeed={this.state.windSpeed}
+                />}
+              />
+              <Route exact path="/about" component={About} />
+              <Route component={NoMatch} />
+            </Switch>
+          </Layout>
+        <Footer />
       </React.Fragment>
     )
   }
