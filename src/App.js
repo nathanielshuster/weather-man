@@ -8,7 +8,6 @@ import { NoMatch } from './NoMatch'
 import { Layout } from './components/Layout'
 import { NavigationBar } from './components/NavigationBar'
 import { Footer } from './components/Footer'
-import { Container, Row, Col } from 'react-bootstrap'
 
 const API_KEY = "bc56cc6b51e6d5970645d40b8f469a84"
 
@@ -16,14 +15,12 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      zipCode: undefined,
       city: undefined,
-      description: undefined,
       temperature: undefined,
       feelsLike: undefined,
       high: undefined,
       low: undefined,
-      windSpeed: undefined,
+      image: undefined,
       error: undefined
     };
   }
@@ -36,14 +33,12 @@ class App extends Component {
     fetch(url)
       .then(response => response.json())
       .then(data => this.setState({
-        zipCode: zip,
         city: data.name,
-        description: data.weather[0].main,
-        temperature: data.main.temp,
-        feelsLike: data.main.feels_like,
-        high: data.main.temp_min,
-        low: data.main.temp_max,
-        windSpeed: data.wind.speed
+        temperature: Math.round(data.main.temp),
+        feelsLike: Math.round(data.main.feels_like),
+        high: Math.round(data.main.temp_max),
+        low: Math.round(data.main.temp_min),
+        image: data.weather[0].icon
       }))
   }
 
@@ -60,14 +55,12 @@ class App extends Component {
               />
               <Route exact path="/weather/:zipCode" render={() =>
                 <Weather
-                  zipCode={this.state.zipCode}
                   city={this.state.city}
-                  description={this.state.description}
                   temperature={this.state.temperature}
                   feelsLike={this.state.feelsLike}
                   high={this.state.high}
                   low={this.state.low}
-                  windSpeed={this.state.windSpeed}
+                  image={this.state.image}
                 />}
               />
               <Route exact path="/about" component={About} />
