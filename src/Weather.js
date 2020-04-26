@@ -1,7 +1,18 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Table, Figure } from 'react-bootstrap'
 import styled from 'styled-components';
-import Rain from './assets/rain.jpg'
+import Day from './assets/01d.jpg'
+import Night from './assets/01n.jpg'
+import SunCloudD from './assets/02d.jpg'
+import SunCloudN from './assets/02n.jpg'
+import Cloudy from './assets/03d.jpg'
+import Partly from './assets/04d.jpg'
+import Rain from './assets/09d.jpg'
+import RainD from './assets/10d.jpg'
+import RainN from './assets/10n.jpg'
+import Thunder from './assets/11d.jpg'
+import Snow from './assets/13d.jpg'
+import Mist from './assets/50d.jpg'
 
 const Styles = styled.div`
   .top {
@@ -26,11 +37,28 @@ const Styles = styled.div`
   }
 `;
 
-class Weather extends Component {
-  componentDidUpdate() {
-    console.log(this.props)
-  }
+const WeatherIcon = {
+  "01d": "Day",
+  "01n": "Night",
+  "02d": "SunCloudD",
+  "02n": "SunCloudN",
+  "03d": "Cloudy",
+  "03n": "Cloudy",
+  "04d": "Partly",
+  "04n": "Partly",
+  "09d": "Rain",
+  "09n": "Rain",
+  "10d": "RainD",
+  "10n": "RainN",
+  "11d": "Thunder",
+  "11n": "Thunder",
+  "13d": "Snow",
+  "13n": "Snow",
+  "50d": "Mist",
+  "50n": "Mist"
+}
 
+class Weather extends Component {
   render () {
     return (
       <Styles>
