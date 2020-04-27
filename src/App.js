@@ -3,12 +3,11 @@ import { Route, Switch } from 'react-router-dom'
 import { withRouter } from "react-router"
 import { Home } from './Home'
 import { About } from './About'
-import Weather from './Weather'
+import { Weather } from './Weather'
 import { NoMatch } from './NoMatch'
 import { Layout } from './components/Layout'
 import { NavigationBar } from './components/NavigationBar'
 import { Footer } from './components/Footer'
-import { Spinner } from 'react-bootstrap'
 
 const API_KEY = "bc56cc6b51e6d5970645d40b8f469a84"
 
@@ -34,16 +33,27 @@ class App extends Component {
     this.props.history.push(`/weather/${zip}`)
     const url = `http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${API_KEY}&units=imperial`
     fetch(url)
-      .then(response => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       .then(data => this.setState({
+        isLoading: false,
         city: data.name,
         temperature: Math.round(data.main.temp),
         feelsLike: Math.round(data.main.feels_like),
         high: Math.round(data.main.temp_max),
         low: Math.round(data.main.temp_min),
-        imageCode: data.weather[0].icon,
-        isLoading: false
+        imageCode: data.weather[0].icon
       }))
+      .catch((error) => {
+        this.setState({
+          isLoading: false,
+          error: true
+        })
+      });
   }
 
   render() {
@@ -67,8 +77,9 @@ class App extends Component {
                     high={this.state.high}
                     low={this.state.low}
                     imageCode={this.state.imageCode}
+                    error={this.state.error}
                   />}
-                /> : null
+                /> : <React.Fragment>{null}</React.Fragment>
               }
               <Route exact path="/about" component={About} />
               <Route component={NoMatch} />

@@ -27,6 +27,8 @@ const Styles = styled.div`
   }
 
   .form-control {
+    outline: none;
+    box-shadow:none !important;
     border-color: #659DBD;
   }
 
