@@ -32,11 +32,25 @@ const Styles = styled.div`
     color: #659DBD;
   }
 
-  .error-sub {
+  .error-sub, .description {
     font-family: ff-tisa-web-pro, serif;
     font-weight: 400;
     font-style: normal;
     color: #659DBD;
+  }
+
+  @media (max-width: 600px) {
+    .top {
+      font-size: 3.5rem;
+    }
+
+    .error-sorry {
+      font-size: 3.5rem;
+    }
+
+    .error-sub {
+      font-size: 2rem;
+    }
   }
 `;
 
@@ -46,7 +60,7 @@ export const Weather = (props) => (
       <Container>
         <Row>
           <Col className="justify-content-center">
-            <h1 className="text-center top">{props.city}</h1>
+            <h1 className="display-3 text-center top">{props.city}</h1>
           </Col>
         </Row>
         <Row>
@@ -89,7 +103,7 @@ export const Weather = (props) => (
         <Row>
           <Col className="justify-content-center">
             <h1 className="display-3 text-center error-sorry">Sorry!</h1>
-            <h1 className="text-center error-sub">Something went wrong.</h1>
+            <h1 className="text-center error-sub">We can't find that zip code right now.</h1>
           </Col>
         </Row>
       </Container>
