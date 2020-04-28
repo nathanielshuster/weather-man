@@ -8,7 +8,7 @@ import { Layout } from './components/Layout'
 import { NavigationBar } from './components/NavigationBar'
 import { Footer } from './components/Footer'
 
-const API_KEY = "bc56cc6b51e6d5970645d40b8f469a84"
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 class App extends Component {
   constructor(props) {
