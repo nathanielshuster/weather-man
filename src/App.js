@@ -30,7 +30,7 @@ class App extends Component {
     this.setState({ isLoading: true });
     const zip = e.target.zipCode.value
     this.props.history.push(`/weather/${zip}`)
-    const url = `http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${API_KEY}&units=imperial`
+    const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${API_KEY}&units=imperial`
     fetch(url)
       .then((response) => {
         if (!response.ok) {
