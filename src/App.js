@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { withRouter } from "react-router"
 import { Home } from './Home'
-import { About } from './About'
 import { Weather } from './Weather'
 import { NoMatch } from './NoMatch'
 import { Layout } from './components/Layout'
@@ -81,7 +80,6 @@ class App extends Component {
                   />}
                 /> : <React.Fragment>{null}</React.Fragment>
               }
-              <Route exact path="/about" component={About} />
               <Route component={NoMatch} />
             </Switch>
           </Layout>
