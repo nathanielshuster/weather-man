@@ -39,7 +39,7 @@ const Styles = styled.div`
     color: #659DBD;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     .top {
       font-size: 3.5rem;
     }
