@@ -41,13 +41,31 @@ const Styles = styled.div`
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .top {
       font-size: 3.5rem;
     }
 
     .slogan {
       font-size: 2rem;
+    }
+
+    .input-group {
+      width: 55%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .top {
+      font-size: 3rem;
+    }
+
+    .slogan {
+      font-size: 1.5rem;
+    }
+
+    .input-group {
+      width: 55%;
     }
   }
 `;
