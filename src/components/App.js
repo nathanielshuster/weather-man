@@ -4,9 +4,9 @@ import { withRouter } from "react-router"
 import { Home } from './Home'
 import { Weather } from './Weather'
 import { NoMatch } from './NoMatch'
-import { Layout } from './components/Layout'
-import { NavigationBar } from './components/NavigationBar'
-import { Footer } from './components/Footer'
+import { Layout } from './Layout'
+import { NavigationBar } from './NavigationBar'
+import { Footer } from './Footer'
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 

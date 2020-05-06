@@ -66,7 +66,7 @@ export const Weather = (props) => (
             <Figure>
               <Figure.Image
                 alt="Weather Icon"
-                src={require(`./assets/${props.imageCode}.jpg`)}
+                src={require(`../assets/${props.imageCode}.jpg`)}
               />
             </Figure>
           </Col>
