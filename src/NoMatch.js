@@ -3,29 +3,28 @@ import { Container, Row, Col } from 'react-bootstrap'
 import styled from 'styled-components';
 
 const Styles = styled.div`
-  .top {
-    padding: 150px 0px 0px;
+  .container {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .display-3 {
     font-family: lust,serif;
     font-weight: 400;
     font-style: normal;
     color: #659DBD;
+    font-size: 2.25em;
+    margin: 0px;
   }
 
-  .bottom {
+  .nomatch-sub {
     font-family: ff-tisa-web-pro, serif;
     font-weight: 400;
     font-style: normal;
     color: #659DBD;
-  }
-
-  @media (max-width: 600px) {
-    .top {
-      font-size: 3.5rem;
-    }
-
-    .bottom {
-      font-size: 2rem;
-    }
+    font-size: 1.35em;
   }
 `;
 
@@ -33,9 +32,9 @@ export const NoMatch = () => (
   <Styles>
     <Container>
       <Row>
-        <Col>
-          <h1 className="display-3 text-center top">Sorry!</h1>
-          <h1 className="text-center bottom">That page doesn't exist.</h1>
+        <Col className="text-center">
+          <h1 className="display-3">Sorry!</h1>
+          <h1 className="nomatch-sub">That page doesn't exist.</h1>
         </Col>
       </Row>
     </Container>

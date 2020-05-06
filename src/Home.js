@@ -3,32 +3,42 @@ import { Form, Button, InputGroup, Container, Row, Col } from 'react-bootstrap'
 import styled from 'styled-components';
 
 const Styles = styled.div`
-  .top {
-    padding: 130px 0px 0px;
+  .container {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .display-3 {
     font-family: lust,serif;
     font-weight: 400;
+    font-size: 2.25em;
     font-style: normal;
     color: #659DBD;
+    margin: 0px;
   }
 
   .slogan {
     font-family: ff-tisa-web-pro, serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 1.35em;
     color: #659DBD;
+    margin: 0px 0px 15px;
   }
 
   .input-group {
-    padding: 30px 0px 0px;
-    width: 35%;
+    padding: 15px 0px 0px;
     font-family: ff-tisa-web-pro, serif;
     font-weight: 400;
     font-style: normal;
+    width: 250px;
   }
 
   .form-control {
     outline: none;
-    box-shadow:none !important;
+    box-shadow:none;
     border-color: #659DBD;
   }
 
@@ -40,44 +50,20 @@ const Styles = styled.div`
       background-color: #4C768E;
     }
   }
-
-  @media (max-width: 768px) {
-    .top {
-      font-size: 3.5rem;
-    }
-
-    .slogan {
-      font-size: 2rem;
-    }
-
-    .input-group {
-      width: 55%;
-    }
-  }
-
-  @media (max-width: 400px) {
-    .top {
-      font-size: 3rem;
-    }
-
-    .slogan {
-      font-size: 1.5rem;
-    }
-
-    .input-group {
-      width: 55%;
-    }
-  }
 `;
 
 export const Home = (props) => (
   <Styles>
     <Container>
       <Row>
-        <Col>
-          <h1 className="display-3 text-center top">Weatherman</h1>
-          <h1 className="text-center slogan">Your Weather. Right Now.</h1>
+        <Col className="text-center">
+          <h1 className="display-3">Weatherman</h1>
+          <h1 className="slogan">Your Weather. Right Now.</h1>
+        </Col>
+      </Row>
 
+      <Row>
+        <Col>
           <Form className="d-flex justify-content-center" onSubmit={props.getWeather}>
             <InputGroup>
               <Form.Control id="zipCode" min="00000" max="99999" type="number" placeholder="Zip Code" />

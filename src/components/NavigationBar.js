@@ -3,10 +3,6 @@ import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const Styles = styled.div`
-  .navbar {
-    background-color: white;
-  }
-
   .navbar-brand, .navbar-nav .nav-link {
     color: #659DBD;
 
@@ -30,7 +26,7 @@ const Styles = styled.div`
 
 export const NavigationBar = () => (
   <Styles>
-    <Navbar expand="lg">
+    <Navbar className="fixed-top" expand="lg">
       <Navbar.Brand href="/">Weatherman</Navbar.Brand>
       <Nav className="ml-auto">
         <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>

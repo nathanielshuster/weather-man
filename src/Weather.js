@@ -3,12 +3,20 @@ import { Container, Row, Col, Table, Figure } from 'react-bootstrap'
 import styled from 'styled-components';
 
 const Styles = styled.div`
-  .top {
-    padding: 45px 0px 0px;
+  .container {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .display-3 {
     font-family: lust,serif;
     font-weight: 400;
     font-style: normal;
     color: #659DBD;
+    font-size: 2.25em;
+    margin: 0px;
   }
 
   .table {
@@ -21,36 +29,16 @@ const Styles = styled.div`
   }
 
   .figure {
-    padding: 10px 0px 10px;
+    margin: 0px;
+    padding: 10px 0px;
   }
 
-  .error-sorry {
-    padding: 150px 0px 0px;
-    font-family: lust,serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #659DBD;
-  }
-
-  .error-sub, .description {
+  .error-sub {
     font-family: ff-tisa-web-pro, serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 1.35em;
     color: #659DBD;
-  }
-
-  @media (max-width: 768px) {
-    .top {
-      font-size: 3.5rem;
-    }
-
-    .error-sorry {
-      font-size: 3.5rem;
-    }
-
-    .error-sub {
-      font-size: 2rem;
-    }
   }
 `;
 
@@ -59,8 +47,8 @@ export const Weather = (props) => (
     {!props.error ? (
       <Container>
         <Row>
-          <Col className="justify-content-center">
-            <h1 className="display-3 text-center top">{props.city}</h1>
+          <Col className="text-center">
+            <h1 className="display-3">{props.city}</h1>
           </Col>
         </Row>
         <Row>
@@ -101,9 +89,9 @@ export const Weather = (props) => (
     ) : (
       <Container>
         <Row>
-          <Col className="justify-content-center">
-            <h1 className="display-3 text-center error-sorry">Sorry!</h1>
-            <h1 className="text-center error-sub">We can't find that zip code right now.</h1>
+          <Col className="text-center">
+            <h1 className="display-3">Sorry!</h1>
+            <h1 className="error-sub">Couldn't locate area.</h1>
           </Col>
         </Row>
       </Container>
