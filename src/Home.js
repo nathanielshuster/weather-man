@@ -5,9 +5,9 @@ import styled from 'styled-components';
 const Styles = styled.div`
   .container {
     position: fixed;
-    right: 0;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .display-3 {
@@ -50,6 +50,20 @@ const Styles = styled.div`
       background-color: #4C768E;
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    .display-3 {
+      font-size: 3.17em;
+    }
+
+    .slogan {
+      font-size: 1.9em;
+    }
+
+    .input-group {
+      width: 350px;
+    }
+  }
 `;
 
 export const Home = (props) => (
@@ -59,11 +73,7 @@ export const Home = (props) => (
         <Col className="text-center">
           <h1 className="display-3">Weatherman</h1>
           <h1 className="slogan">Your Weather. Right Now.</h1>
-        </Col>
-      </Row>
 
-      <Row>
-        <Col>
           <Form className="d-flex justify-content-center" onSubmit={props.getWeather}>
             <InputGroup>
               <Form.Control id="zipCode" min="00000" max="99999" type="number" placeholder="Zip Code" />

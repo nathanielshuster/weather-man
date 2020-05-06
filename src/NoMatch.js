@@ -5,9 +5,9 @@ import styled from 'styled-components';
 const Styles = styled.div`
   .container {
     position: fixed;
-    right: 0;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .display-3 {
@@ -25,6 +25,16 @@ const Styles = styled.div`
     font-style: normal;
     color: #659DBD;
     font-size: 1.35em;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .display-3 {
+      font-size: 3.17em;
+    }
+
+    .nomatch-sub {
+      font-size: 1.9em;
+    }
   }
 `;
 
