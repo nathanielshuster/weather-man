@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { withRouter } from "react-router"
+import { withRouter, Redirect } from "react-router"
 import { Home } from './Home'
 import { Weather } from './Weather'
-import { NoMatch } from './NoMatch'
 import { Layout } from './Layout'
 import { NavigationBar } from './NavigationBar'
 import { Footer } from './Footer'
@@ -80,7 +79,7 @@ class App extends Component {
                   />}
                 /> : <React.Fragment>{null}</React.Fragment>
               }
-              <Route component={NoMatch} />
+              <Redirect from="*" to="/" />
             </Switch>
           </Layout>
         <Footer />
