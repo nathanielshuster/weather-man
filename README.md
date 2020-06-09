@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Weatherman
 
-## Available Scripts
+An application used to find weather for a specified zip code, built with React, JavaScript, and CSS.
 
-In the project directory, you can run:
+## Project Status
 
-### `yarn start`
+Finished and operational at the moment.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation and Setup Instructions
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-### `yarn test`
+Installation:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm install`  
 
-### `yarn build`
+To Start Server:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm start`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Reflection
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project was built when I first began using React. I wanted to make something simple, clean, and easy to use, and I feel that I accomplished that.
 
-### `yarn eject`
+Originally, I wanted to build a 5 day weather forecast using the Open Weather Map API. I instead opted to limit the weather results to just the current weather, and implement some icons that I designed to make it more aesthetically pleasing.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+One of the main challenges I ran into was general data flow. Before this project I was not sure what a promise was, and I kept running into errors because I was trying to pass props that did not exist yet. By the time I finished this project, I had learned the basics of async requests in React.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The technologies implemented in this project are React, React-Router, and a significant amount of JSX and CSS. Now that I have experience with React Hooks, in the future I plan on converting all of my class components and implement Hooks instead. I believe it would also be beneficial to design something more compact and accomplish my initial idea of a 5 day weather forecast.
