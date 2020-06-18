@@ -3,13 +3,6 @@ import { Form, Button, InputGroup, Container, Row, Col } from 'react-bootstrap'
 import styled from 'styled-components';
 
 const Styles = styled.div`
-  .container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
   .display-3 {
     font-family: lust,serif;
     font-weight: 400;

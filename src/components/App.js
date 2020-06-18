@@ -60,25 +60,8 @@ class App extends Component {
         <NavigationBar />
           <Layout>
             <Switch>
-              <Route exact path="/" render={() =>
-                <Home
-                  getWeather={this.getWeather}
-                />}
-              />
-              {
-                !this.state.isLoading ?
-                <Route exact path="/weather/:zipCode" render={(props) =>
-                  <Weather
-                    city={this.state.city}
-                    temperature={this.state.temperature}
-                    feelsLike={this.state.feelsLike}
-                    high={this.state.high}
-                    low={this.state.low}
-                    imageCode={this.state.imageCode}
-                    error={this.state.error}
-                  />}
-                /> : <React.Fragment>{null}</React.Fragment>
-              }
+              <Route exact path="/" component={Home} />
+              <Route exact path="/weather/:zipCode" component={Weather} />
               <Redirect from="*" to="/" />
             </Switch>
           </Layout>
