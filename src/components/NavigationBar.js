@@ -26,7 +26,7 @@ const Styles = styled.div`
 
 export const NavigationBar = () => (
   <Styles>
-    <Navbar className="fixed-top" expand="lg">
+    <Navbar expand="lg">
       <Navbar.Brand href="/">Weatherman</Navbar.Brand>
       <Nav className="ml-auto">
         <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
