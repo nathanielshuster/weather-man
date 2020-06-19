@@ -3,28 +3,12 @@ import { Spinner } from 'react-bootstrap'
 import { Result } from './Result'
 import axios from 'axios'
 
-// const Styles = styled.div`
-//   .table {
-//     font-family: ff-tisa-web-pro, serif;
-//     font-weight: 400;
-//     font-style: normal;
-//     color: #659DBD;
-//   }
-//
-//   .error-sub {
-//     font-family: ff-tisa-web-pro, serif;
-//     font-weight: 400;
-//     font-style: normal;
-//     color: #659DBD;
-//   }
-// `;
-
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 export const Weather = (props) => {
   const zipCode = props.match.params.zipCode;
   const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=${API_KEY}&units=imperial`;
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [weatherData, setWeatherData] = useState({
     city: "",
     temperature: null,
@@ -37,7 +21,6 @@ export const Weather = (props) => {
   })
 
   useEffect(() => {
-    setLoading(true)
     axios.get(url)
       .then(response => {
         const data = response.data

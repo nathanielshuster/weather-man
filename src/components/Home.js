@@ -48,8 +48,8 @@ export const Home = (props) => {
             <InputGroup>
               <Form.Control
                 id="zipCode"
-                min="00000"
-                max="99999"
+                min="00501"
+                max="99950"
                 type="number"
                 placeholder="Enter Zip Code"
                 onChange={handleChange} />
