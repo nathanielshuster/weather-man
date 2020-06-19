@@ -24,7 +24,7 @@ export const Footer = () => (
   <Styles>
     <Navbar expand="lg" className="fixed-bottom">
       <Nav.Item className="mr-auto"><Nav.Link href="/">&copy; 2020 Weatherman</Nav.Link></Nav.Item>
-      <Nav.Item className="ml-auto"><Nav.Link target="_blank" href="https://github.com/nathanielshuster/weather-man">GitHub</Nav.Link></Nav.Item>
+      <Nav.Item className="ml-auto"><Nav.Link target="_blank" href="https://github.com/nathanielshuster/weatherman">GitHub</Nav.Link></Nav.Item>
     </Navbar>
   </Styles>
 )
