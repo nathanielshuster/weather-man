@@ -10,11 +10,11 @@ export const WeatherImage = (props) => {
   return (
     <Styles>
       <Row>
-        <Col>
+        <Col className="justify-content-center">
           <Figure>
             <Figure.Image
               alt="Weather Icon"
-              src={props.img}
+              src={require('../assets/' + props.imageCode + '.jpg')}
             />
           </Figure>
         </Col>
