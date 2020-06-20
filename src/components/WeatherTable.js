@@ -3,7 +3,12 @@ import { Row, Col, Table } from 'react-bootstrap'
 import styled from 'styled-components';
 
 const Styles = styled.div`
-
+  td {
+    font-family: ff-tisa-web-pro, serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #659DBD;
+  }
 `;
 
 export const WeatherTable = (props) => {
