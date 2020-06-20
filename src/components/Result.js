@@ -4,7 +4,6 @@ import { PageHeader } from './PageHeader'
 
 export const Result = (props) => {
   const images = require.context('../assets', true);
-  const image = images(`./${props.data.imageCode}`);
   return (
     <>
     { props.data.hasError ? <PageHeader header="Sorry!" sub="No results found."/> :
@@ -15,7 +14,6 @@ export const Result = (props) => {
           <Figure>
             <Figure.Image
               alt="Weather Icon"
-
             />
           </Figure>
         </Col>

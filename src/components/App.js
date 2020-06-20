@@ -15,6 +15,7 @@ const App = (props) => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/:zipCode" component={Weather} />
+            <Route exact path="/:zipCode/error" component={Weather} />
             <Redirect from="*" to="/" />
           </Switch>
         </Layout>

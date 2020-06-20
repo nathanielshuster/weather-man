@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Spinner } from 'react-bootstrap'
 import { Result } from './Result'
 import axios from 'axios'
+import history from '../history/history'
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -15,9 +16,7 @@ export const Weather = (props) => {
     feelsLike: null,
     high: null,
     low: null,
-    imageCode: "",
-    hasError: false,
-    errorMessage: ""
+    imageCode: ""
   })
 
   useEffect(() => {
@@ -36,12 +35,7 @@ export const Weather = (props) => {
         setLoading(false)
       })
       .catch(error => {
-        const message = error.response.data.error
-        setWeatherData({
-          ...weatherData,
-          hasError: true,
-          message: message
-        })
+        history.push(`/${zipCode}/error`)
         setLoading(false)
       })
   }, [zipCode, url, weatherData]);
@@ -49,9 +43,7 @@ export const Weather = (props) => {
   return (
     <>
       { loading ?
-        <Spinner animation="border" role="status">
-          <span className="sr-only">Loading...</span>
-        </Spinner> :
+        <Spinner animation="border" role="status"></Spinner> :
         <Result data={weatherData} />
       }
     </>
