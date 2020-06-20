@@ -1,11 +1,15 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { withRouter, Redirect } from "react-router"
-import { Home } from './Home'
-import { Weather } from './Weather'
-import { Layout } from './Layout'
-import { NavigationBar } from './NavigationBar'
-import { Footer } from './Footer'
+
+import { NavigationBar } from './components/NavigationBar'
+import { Layout } from './components/Layout'
+
+import { Home } from './routes/Home'
+import { Weather } from './routes/Weather'
+import { NoWeather } from './routes/NoWeather'
+
+import { Footer } from './components/Footer'
 
 const App = (props) => {
   return (
@@ -15,7 +19,7 @@ const App = (props) => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/:zipCode" component={Weather} />
-            <Route exact path="/:zipCode/error" component={Weather} />
+            <Route exact path="/:zipCode/error" component={NoWeather} />
             <Redirect from="*" to="/" />
           </Switch>
         </Layout>

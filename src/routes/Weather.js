@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Spinner } from 'react-bootstrap'
-import { Result } from './Result'
+import { WeatherContainer } from '../components/WeatherContainer'
 import axios from 'axios'
 import history from '../history/history'
 
@@ -36,7 +36,6 @@ export const Weather = (props) => {
       })
       .catch(error => {
         history.push(`/${zipCode}/error`)
-        setLoading(false)
       })
   }, [zipCode, url, weatherData]);
 
@@ -44,7 +43,7 @@ export const Weather = (props) => {
     <>
       { loading ?
         <Spinner animation="border" role="status"></Spinner> :
-        <Result data={weatherData} />
+        <WeatherContainer data={weatherData} />
       }
     </>
   )

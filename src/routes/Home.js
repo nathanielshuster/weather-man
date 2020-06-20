@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Row, Col, Form, Button, InputGroup } from 'react-bootstrap'
-import { PageHeader } from './PageHeader'
+import { PageHeader } from '../components/PageHeader'
 import styled from 'styled-components';
 import history from '../history/history'
 

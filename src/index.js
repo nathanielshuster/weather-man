@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import App from './App';
 import { Router } from 'react-router'
 import history from './history/history'
 import 'bootstrap/dist/css/bootstrap.min.css';
